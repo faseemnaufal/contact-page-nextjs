@@ -1,0 +1,171 @@
+.contact-section {
+  background-color: white;
+  color: black;
+}
+
+.contact-header {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 18%;
+  margin-bottom: 10px;
+  align-items: center;
+  padding: 40px 20px 0;
+}
+
+.title-block h1 {
+  font-size: 3.2rem;
+  line-height: 1.1;
+}
+
+.builds {
+  color: #02AEC9;
+  font-weight: 800;
+  font-size: 9.2rem;
+}
+
+.career-text {
+  font-weight: 400;
+}
+
+.us {
+  font-weight: 800;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px; /* space between icons */
+}
+
+.social-icons svg {
+  width: 40px;       /* size of the icon */
+  height: 40px;
+  padding: 8px;      /* space inside the circle */
+  border: 2px solid #000; /* circle border color and thickness */
+  border-radius: 50%; /* makes it a circle */
+  color: #000;       /* icon color */
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.social-icons svg:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.contact-blue-strip {
+  /* background-color: #d7f1fd; */
+  /* padding: 50px 20px; */
+  position: relative;
+  overflow: visible;
+  z-index: 1;
+}
+.contact-blue-strip-height {
+  background-color: #ADD5DF;
+  /* padding: 50px 20px; */
+  /* position: relative; */
+  overflow: visible;
+  z-index: 1;
+  /* height: 50vh; */
+}
+
+.contact-main {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+  position: relative;
+  flex-direction: row;
+}
+
+.contact-info {
+  flex: 1;
+  max-width: 400px;
+  z-index: 2;
+}
+
+.contact-image {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+  margin-top: -80px; /* "Break out" effect */
+}
+
+.contact-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.contact-info h3 {
+  font-size: 1.8rem;
+  margin-bottom: 36px;
+  margin-top: -35px;
+}
+
+.blue {
+  color: #02AEC9;
+}
+
+/* Cards section remains the same */
+
+.contact-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 40px 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  flex: 1 1 300px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card h4 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .contact-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .contact-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .title-block h1 {
+    font-size: 2.2rem;
+  }
+
+  .builds {
+    font-size: 3rem;
+    }
+
+   .contact-main {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-image {
+    margin-top: 0; /* No breakout on mobile */
+  }
+
+  .contact-info {
+    max-width: 100%;
+  }
+
+  .contact-cards {
+    flex-direction: column;
+  }
+}

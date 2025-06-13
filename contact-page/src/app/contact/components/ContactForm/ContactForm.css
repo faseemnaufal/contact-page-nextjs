@@ -1,0 +1,97 @@
+.contact-wrapper {
+  min-height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.contact-box {
+  width: 100%;
+  max-width: 1000px;
+  background-color: #100B25;
+  color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.contact-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+.input-group input,
+.input-group textarea,
+.input-group select {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  background-color: transparent;
+  color: white;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.input-group input[type="file"] {
+  color: white;
+}
+
+.submit-btn {
+  grid-column: span 1;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .contact-form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .submit-btn {
+    grid-column: span 2;
+  }
+
+  .input-group.full-width {
+    grid-column: span 2;
+  }
+}
+
+.submit-btn button {
+  background-color: #00CFE8;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+.submit-btn button:hover {
+  background-color: #00a7bb;
+}
+
+.status-message {
+  margin-top: 10px;
+  color: #ffd700;
+  font-size: 0.95rem;
+}

@@ -1,0 +1,77 @@
+.main-banner {
+  position: relative;
+  min-height: 90vh;
+  background-image: url('../../../assets/banner.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+.main-banner::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60%; /* adjust height of shadow */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  pointer-events: none; /* so overlay doesn't block mouse events */
+  z-index: 1;
+}
+
+.banner-content {
+  position: relative; /* so it stays above the overlay */
+  z-index: 2;
+  color: #fff;
+  padding: 2rem;
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.banner-content h1 {
+  font-size: 7.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.banner-content h1 span {
+  color: #02AEC9;
+}
+
+.banner-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .banner-content h1 {
+    font-size: 2rem;
+  }
+
+  .banner-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-content {
+    padding: 1.5rem;
+  }
+
+  .banner-content h1 {
+    font-size: 1.6rem;
+  }
+
+  .banner-content p {
+    font-size: 0.95rem;
+  }
+}

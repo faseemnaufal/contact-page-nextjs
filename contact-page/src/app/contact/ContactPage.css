@@ -1,0 +1,15 @@
+/* ContactPage.css */
+
+.contact-page {
+  padding: 3rem 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-page h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #0C0A3E;
+}
