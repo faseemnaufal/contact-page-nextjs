@@ -29,12 +29,13 @@ const ContactSection = () => {
                 </div>
                 <div className="contact-info">
                     <h3>Head <span className="blue">Office</span></h3>
-                    <p><strong>Head Office (Block E)</strong><br />
+                    <p>Address</p>
+                    <p className='contact-p-margin'><strong>Head Office (Block E)<br />
                     ESOFT Metro Campus No.03,<br />
-                    De Fonseka Place, Colombo 4 Srilanka
+                    De Fonseka Place, Colombo 4 Srilanka</strong>
                     </p>
-                    <p><strong>Call Us on</strong><br />+94 117 572 572</p>
-                    <p><strong>Email</strong><br />info@esoft.lk</p>
+                    <p>Call Us on<br /><strong className='contact-p-margin'>+94 117 572 572</strong></p>
+                    <p className='contact-p-margin'>Email<br /><strong className='contact-p-margin'>info@esoft.lk</strong></p>
                 </div>
                 </div>
             </div>
@@ -43,21 +44,27 @@ const ContactSection = () => {
       <div className="contact-cards">
         <div className="card">
           <h4>Certificate and <span className="blue">Transcript</span></h4>
-          <p><strong>Registrar</strong><br />
+          <p>Address</p>
+          <p className='contact-p-margin-bottom'><strong>Registrar<br />
             ESOFT Metro Campus<br />
-            No.03, De Fonseka Place,<br />Colombo 4, Srilanka
+            No.03, De Fonseka Place,<br />Colombo 4, Srilanka</strong>
           </p>
-          <p><strong>Email</strong><br />verifications@esoft.lk</p>
-          <p><strong>Call Us on</strong><br />+94 117 572 572</p>
+          <div className='contact-card-bottom-line'>
+            <p>Email<br /><strong>verifications@esoft.lk</strong></p>
+            <p>Call Us on<br /><strong>+94 117 572 572</strong></p>
+          </div>
         </div>
         <div className="card">
           <h4>Complaints and <span className="blue">Student Feedback</span></h4>
-          <p><strong>SRU Division</strong><br />
+          <p>Address</p>
+          <p><strong>SRU Division<br />
             ESOFT Metro Campus<br />
-            No.03, De Fonseka Place,<br />Colombo 4, Srilanka
+            No.03, De Fonseka Place,<br />Colombo 4, Srilanka</strong>
           </p>
-          <p><strong>Call Us on</strong><br />+94 117 677 888</p>
-          <p><strong>Email</strong><br />sru@esoft.lk</p>
+          <div className='contact-card-bottom-line'>
+            <p>Call Us on<br /><strong>+94 117 677 888</strong></p>
+            <p>Email<br /><strong>sru@esoft.lk</strong></p>
+          </div>
         </div>
       </div>
     </div>

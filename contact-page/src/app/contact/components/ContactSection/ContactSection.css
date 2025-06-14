@@ -1,6 +1,7 @@
 .contact-section {
   background-color: white;
   color: black;
+  font-family: "Poppins", sans-serif;
 }
 
 .contact-header {
@@ -33,16 +34,16 @@
 
 .social-icons {
   display: flex;
-  gap: 10px; /* space between icons */
+  gap: 10px;
 }
 
 .social-icons svg {
-  width: 40px;       /* size of the icon */
+  width: 40px;
   height: 40px;
-  padding: 8px;      /* space inside the circle */
-  border: 2px solid #000; /* circle border color and thickness */
-  border-radius: 50%; /* makes it a circle */
-  color: #000;       /* icon color */
+  padding: 8px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  color: #000;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
 }
@@ -53,19 +54,15 @@
 }
 
 .contact-blue-strip {
-  /* background-color: #d7f1fd; */
-  /* padding: 50px 20px; */
   position: relative;
   overflow: visible;
   z-index: 1;
 }
+
 .contact-blue-strip-height {
   background-color: #ADD5DF;
-  /* padding: 50px 20px; */
-  /* position: relative; */
   overflow: visible;
   z-index: 1;
-  /* height: 50vh; */
 }
 
 .contact-main {
@@ -89,7 +86,7 @@
   flex: 1;
   position: relative;
   z-index: 1;
-  margin-top: -80px; /* "Break out" effect */
+  margin-top: -80px;
 }
 
 .contact-image img {
@@ -108,13 +105,21 @@
   color: #02AEC9;
 }
 
-/* Cards section remains the same */
+.contact-p-margin {
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.contact-p-margin-bottom {
+  margin-bottom: 20px;
+}
 
 .contact-cards {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   padding: 40px 20px;
+  font-family: "Space Grotesk", sans-serif;
 }
 
 .card {
@@ -127,8 +132,144 @@
 
 .card h4 {
   margin-bottom: 10px;
-  font-size: 1.2rem;
+  font-size: 20px;
 }
+
+.contact-card-bottom-line {
+  display: flex;
+  flex-direction: row;
+  gap: 90px;
+}
+
+/* Grid-based styling for the form layout */
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Floating label input group */
+.input-group {
+  position: relative;
+  margin-top: 16px;
+}
+
+.input-group option{
+  background-color: #100b25;
+}
+
+.input-group label{
+  color: #f3f3f3;
+}
+
+.input-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px 0 8px 0;
+  font-size: 1rem;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  background: transparent;
+  outline: none;
+  resize: none;
+}
+
+/* Hides placeholder text but still triggers :not(:placeholder-shown) */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: transparent;
+}
+
+.contact-form label {
+  position: absolute;
+  top: 12px;
+  left: 0;
+  color: #999 !important; 
+  font-size: 1rem;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  padding-right: 4px;
+}
+
+/* Label floats up when input is focused or filled */
+.contact-form input:focus + label,
+.contact-form input:not(:placeholder-shown) + label,
+.contact-form textarea:focus + label,
+.contact-form textarea:not(:placeholder-shown) + label,
+.contact-form select:focus + label,
+.contact-form select:not([value=""]) + label {
+  top: -10px;
+  font-size: 0.85rem;
+  color: #02AEC9;
+}
+
+/* Focus underline */
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+  border-bottom-color: #02AEC9;
+}
+
+/* Submit button styling */
+.submit-btn {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.submit-btn button {
+  background-color: #02AEC9;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn button:hover {
+  background-color: #029bb2;
+}
+
+.status-message {
+  margin-top: 12px;
+  color: #d8000c;
+  font-weight: 500;
+}
+
+.attachment-button {
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #100b25;
+  color: white;
+  border: 1px dashed white; 
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.3s ease;
+}
+
+.attachment-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.file-list {
+  margin-top: 10px;
+  padding-left: 15px;
+  font-size: 14px;
+  color: #444;
+}
+
+.file-list li {
+  list-style: disc;
+}
+
 
 /* Responsive Tweaks */
 @media (max-width: 768px) {
@@ -137,6 +278,7 @@
     align-items: flex-start;
     gap: 20px;
   }
+
   .contact-header {
     flex-direction: column;
     align-items: flex-start;
@@ -149,16 +291,16 @@
 
   .builds {
     font-size: 3rem;
-    }
+  }
 
-   .contact-main {
+  .contact-main {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
 
   .contact-image {
-    margin-top: 0; /* No breakout on mobile */
+    margin-top: 0;
   }
 
   .contact-info {
@@ -167,5 +309,17 @@
 
   .contact-cards {
     flex-direction: column;
+  }
+
+  .contact-card-bottom-line {
+    flex-direction: column;
+  }
+
+  .contact-form {
+    grid-template-columns: 1fr;
+  }
+
+  .submit-btn {
+    text-align: center;
   }
 }

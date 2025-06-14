@@ -1,16 +1,4 @@
-.main-banner {
-  position: relative;
-  min-height: 90vh;
-  background-image: url('../../../assets/banner.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding: 2rem 1rem;
-  box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Space+Grotesk:wght@300..700&display=swap');
 
 .main-banner::after {
   content: "";
@@ -39,6 +27,7 @@
   font-size: 7.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
+  font-family: "Space Grotesk", sans-serif;
 }
 
 .banner-content h1 span {
@@ -49,6 +38,8 @@
   font-size: 1.1rem;
   line-height: 1.6;
   text-align: center;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
 }
 
 /* Responsive tweaks */

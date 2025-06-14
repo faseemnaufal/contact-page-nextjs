@@ -5,6 +5,7 @@ import ContactForm from './components/ContactForm/ContactForm';
 import './ContactPage.css'; 
 import ContactSection from './components/ContactSection/ContactSection';
 import MapSection from './components/MapSection/MapSection';
+import Footer from './components/Footer/Footer';
 
 export default function ContactPage() {
   return (
@@ -19,6 +20,7 @@ export default function ContactPage() {
     <ContactSection />
     <MapSection />
     <ContactForm />
+    <Footer />
   </>
   );
 }
