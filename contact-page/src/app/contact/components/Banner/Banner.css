@@ -18,14 +18,14 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 60%; /* adjust height of shadow */
+  height: 60%;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
-  pointer-events: none; /* so overlay doesn't block mouse events */
+  pointer-events: none;
   z-index: 1;
 }
 
 .banner-content {
-  position: relative; /* so it stays above the overlay */
+  position: relative;
   z-index: 2;
   color: #fff;
   padding: 2rem;
@@ -53,7 +53,6 @@
   font-family: "Space Grotesk", sans-serif;
 }
 
-/* Responsive tweaks */
 @media (max-width: 768px) {
   .banner-content h1 {
     font-size: 2rem;

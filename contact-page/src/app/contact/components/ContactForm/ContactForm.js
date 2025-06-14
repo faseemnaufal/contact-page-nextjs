@@ -2,12 +2,14 @@
 import { useState } from 'react';
 import './ContactForm.css';
 
+const initialFormState = {
+  name: '', lastName: '', email: '', message: '',
+  nationality: '', contactNumber: '', nic: '', branch: '', programme: '',
+  files: []
+};
+
 export default function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: '', lastName: '', email: '', subject: '', message: '',
-    nationality: '', contactNumber: '', nic: '', branch: '', programme: '',
-    files: []
-  });
+  const [formData, setFormData] = useState(initialFormState);
   const [status, setStatus] = useState('');
 
   const handleChange = (e) => {
@@ -20,40 +22,43 @@ export default function ContactForm() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    const { name, lastName, email, subject, message, files } = formData;
-    if (!name || !lastName || !email || !subject || !message || files.length === 0) {
+  const requiredFields = [
+    'name', 'lastName', 'email', 'message',
+    'nationality', 'contactNumber', 'nic', 'branch', 'programme'
+  ];
+
+  for (let field of requiredFields) {
+    if (!formData[field] || formData[field].trim() === '') {
       setStatus('Please fill in all required fields.');
       return;
     }
+  }
 
-    for (let file of files) {
-      if (file.type !== 'application/pdf') {
-        setStatus('Only PDF files are allowed.');
-        return;
-      }
+  if (!/\S+@\S+\.\S+/.test(formData.email)) {
+    setStatus('Please enter a valid email address.');
+    return;
+  }
+
+  if (formData.files.length === 0) {
+    setStatus('Please upload at least one PDF file.');
+    return;
+  }
+
+  for (let file of formData.files) {
+    if (file.type !== 'application/pdf') {
+      setStatus('Only PDF files are allowed.');
+      return;
     }
 
-    if (name === 'files') {
-      const selectedFiles = Array.from(files);
-
-      // Calculate total size: current + new files
-      const currentTotalSize = formData.files.reduce((total, f) => total + f.size, 0);
-      const newFilesTotalSize = selectedFiles.reduce((total, f) => total + f.size, 0);
-      const maxSizeInBytes = 5 * 1024 * 1024; // 5MB in bytes
-
-      if (currentTotalSize + newFilesTotalSize > maxSizeInBytes) {
-        setStatus('file size 5MB.');
-        return;
-      }
-
-      setFormData({ ...formData, files: [...formData.files, ...selectedFiles] });
-    } else {
-      setFormData({ ...formData, [name]: value });
+    if (file.size > 5 * 1024 * 1024) {
+      setStatus(`Each file must be under 5MB.`);
+      return;
     }
+  }
 
-
+  try {
     const data = new FormData();
     Object.entries(formData).forEach(([key, value]) => {
       if (key === 'files') {
@@ -65,12 +70,19 @@ export default function ContactForm() {
 
     const res = await fetch('/api/contact', {
       method: 'POST',
-      body: data
+      body: data,
     });
 
     const result = await res.json();
     setStatus(result.message);
-  };
+    if (result.message === 'Email sent successfully!') {
+      setFormData(initialFormState);
+    }
+  } catch (err) {
+    console.error(err);
+    setStatus('An error occurred. Please try again.');
+  }
+};
 
   return (
     <div className="contact-wrapper">
@@ -218,7 +230,17 @@ export default function ContactForm() {
 
           <div className="submit-btn">
             <button type="submit">Send Now</button>
-            {status && <p className="status-message">{status}</p>}
+            {status && (
+  <p
+    className={
+      status === 'Email sent successfully!'
+        ? 'status-message success'
+        : 'status-message error'
+    }
+  >
+    {status}
+  </p>
+) }
           </div>
 
         </form>

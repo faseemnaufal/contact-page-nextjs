@@ -1,31 +1,33 @@
 import { NextResponse } from 'next/server';
-import formidable from 'formidable';
-import fs from 'fs';
 import { sendMail } from '@/lib/mail';
 
-export const config = {
-  api: {
-    bodyParser: false
-  }
-};
-
 export async function POST(req) {
-  const form = formidable({ multiples: false, maxFileSize: 5 * 1024 * 1024 });
+  const formData = await req.formData();
 
-  const [fields, files] = await new Promise((resolve, reject) => {
-    form.parse(req, (err, fields, files) => {
-      if (err) reject(err);
-      else resolve([fields, files]);
-    });
-  });
+  const fields = {
+    name: formData.get('name'),
+    lastName: formData.get('lastName'),
+    email: formData.get('email'),
+    subject: formData.get('subject'),
+    message: formData.get('message'),
+    nationality: formData.get('nationality'),
+    contactNumber: formData.get('contactNumber'),
+    nic: formData.get('nic'),
+    branch: formData.get('branch'),
+    programme: formData.get('programme'),
+  };
 
-  const file = files.file;
-  if (!file || file.mimetype !== 'application/pdf') {
+  const files = formData.getAll('files');
+
+  const isValid = files.every(file =>
+    file && file.type === 'application/pdf'
+  );
+  if (!isValid) {
     return NextResponse.json({ message: 'Only PDF files are allowed.' }, { status: 400 });
   }
 
   try {
-    await sendMail(fields, file);
+    await sendMail(fields, files);
     return NextResponse.json({ message: 'Email sent successfully!' });
   } catch (error) {
     console.error(error);

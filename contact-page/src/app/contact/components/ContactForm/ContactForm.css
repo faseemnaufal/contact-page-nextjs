@@ -93,6 +93,13 @@
 
 .status-message {
   margin-top: 10px;
-  color: #ffd700;
-  font-size: 0.95rem;
+  font-weight: bold;
+}
+
+.status-message.success {
+  color: green;
+}
+
+.status-message.error {
+  color: red;
 }

@@ -151,7 +151,6 @@
   text-decoration: underline;
 }
 
-/* Mobile and Tablet Responsive Footer */
 @media screen and (max-width: 1024px) {
   .ft-footer-content {
     grid-template-columns: repeat(2, 1fr);

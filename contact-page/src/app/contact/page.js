@@ -9,10 +9,6 @@ import Footer from './components/Footer/Footer';
 
 export default function ContactPage() {
   return (
-    // <main className="contact-page">
-    //   <h1>Contact Us</h1>
-    //   <ContactForm />
-    // </main>
     <>
     <TopHeader />
     <MainHeader />

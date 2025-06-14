@@ -141,14 +141,12 @@
   gap: 90px;
 }
 
-/* Grid-based styling for the form layout */
 .contact-form {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
 
-/* Floating label input group */
 .input-group {
   position: relative;
   margin-top: 16px;
@@ -179,7 +177,6 @@
   resize: none;
 }
 
-/* Hides placeholder text but still triggers :not(:placeholder-shown) */
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
   color: transparent;
@@ -196,7 +193,6 @@
   padding-right: 4px;
 }
 
-/* Label floats up when input is focused or filled */
 .contact-form input:focus + label,
 .contact-form input:not(:placeholder-shown) + label,
 .contact-form textarea:focus + label,
@@ -208,14 +204,12 @@
   color: #02AEC9;
 }
 
-/* Focus underline */
 .contact-form input:focus,
 .contact-form textarea:focus,
 .contact-form select:focus {
   border-bottom-color: #02AEC9;
 }
 
-/* Submit button styling */
 .submit-btn {
   grid-column: 1 / -1;
   text-align: center;
@@ -271,7 +265,6 @@
 }
 
 
-/* Responsive Tweaks */
 @media (max-width: 768px) {
   .contact-section {
     flex-direction: column;

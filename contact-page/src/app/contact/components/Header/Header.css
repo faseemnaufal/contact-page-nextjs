@@ -1,4 +1,3 @@
-/* ====== Toggle Button for TopHeader ====== */
 .top-header {
   background-color: #100B25;
 }
@@ -23,7 +22,6 @@
   cursor: pointer;
 }
 
-/* Wrap both sections under one container */
 .top-header-links {
   display: flex;
   justify-content: space-between;
@@ -42,7 +40,6 @@
   margin-left: 18px;
 }
 
-/* Responsive behavior */
 @media (max-width: 768px) {
   .top-header {
     flex-direction: column;
@@ -79,7 +76,6 @@
   }
 }
 
-/* ===== Main Header ===== */
 .main-header {
   background: #00418F;
   color: #fff;
@@ -126,7 +122,6 @@
   cursor: pointer;
 }
 
-/* Hamburger icon */
 .hamburger {
   display: none;
   font-size: 1.8rem;
@@ -134,7 +129,6 @@
   color: white;
 }
 
-/* ===== Responsive Styles ===== */
 @media (max-width: 768px) {
   .top-header {
     flex-direction: column;
